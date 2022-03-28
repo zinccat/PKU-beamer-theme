@@ -1,0 +1,83 @@
+% Specify how elements are typeset inside the frame
+%\ProvidesPackage{beamercolorthemepku}
+
+% --- Title Page ---
+\makeatletter
+\setbeamertemplate{title page}
+{
+   \vbox{}
+   \vfill
+   \begin{centering}
+       \vskip0.25em%
+     \begin{beamercolorbox}[sep=8pt,center]{title}
+       \usebeamerfont{title}\inserttitle\par%
+       \ifx\insertsubtitle\@empty%
+       \else%
+         \vskip0.25em%
+         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+       \fi%     
+     \end{beamercolorbox}%
+    \vskip2.25em%
+     {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+     \vskip1em\par
+     \begin{beamercolorbox}[sep=8pt,center]{author}
+       \usebeamerfont{author}\insertauthor
+     \end{beamercolorbox}
+      \vspace{-10pt}
+     \begin{beamercolorbox}[sep=8pt,center]{institute}
+       \usebeamerfont{institute}\insertinstitute
+     \end{beamercolorbox}
+     \begin{beamercolorbox}[sep=8pt,center]{date}
+       \usebeamerfont{date}\insertdate
+     \end{beamercolorbox}\vskip0.5em
+   \end{centering}
+   \vfill
+}
+\makeatother
+
+% --- Footer ---
+%Remove Navigation Bars
+\setbeamertemplate{footline}[frame number]{}
+% And Symbols
+\setbeamertemplate{navigation symbols}{}
+% Design
+\setbeamertemplate{footline}{
+\begin{tikzpicture}[remember picture,overlay]
+    \coordinate (West) at (0,0.5);
+    \coordinate (East) at (\textwidth,0.5);
+    \draw[fill=pekingred, draw=pekingred] (0,0) rectangle  (\textwidth,0.5);
+    
+   % \node [inner sep=0pt,clip,rounded corners=0.1cm] (pkulogo) at (0.95\textwidth,0.5) 
+
+\end{tikzpicture}}
+
+% --- Header ---
+\setbeamertemplate{frametitle}{
+
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.75ex,dp=1.375ex]{frametitle}
+        \hspace*{2ex}\insertframetitle \hfill {\small\insertframenumber} \hspace*{1ex}
+    \end{beamercolorbox}
+    
+    \par
+    
+    \begin{tikzpicture}[remember picture,overlay]
+    
+    \coordinate (LeftEnd) at (-1, 0.5);
+    \coordinate (LeftEndUnder) at (-1, 0.1);
+    \coordinate (RightEnd) at (3,0.5);
+    \draw[pekingred, thick, fill=pekingred] (LeftEnd)--(RightEnd)--(LeftEndUnder) -- (LeftEnd);
+
+    \coordinate (RightEnd) at (\paperwidth, 0.1);
+    \coordinate (PreRightEnd) at (10, 0.1);
+    \draw[pekingred,thick] (RightEnd) -- (PreRightEnd);
+    
+    \end{tikzpicture}
+
+    
+}
+
+% --- Table of Content ---
+% Might modify later (next version)
+
+% --- Sidebar of Content ---
+% Might add later (next version)

@@ -1,0 +1,16 @@
+% Specify the outside/border (ex. logo, navigation, sidebar)
+%\ProvidesPackage{beamercolorthemepku}
+
+% If you want Section Page to be automatically generated
+\AtBeginSection[]{
+   \begin{frame}[plain]
+   \vfill
+   \centering
+   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+     \usebeamerfont{title}\insertsectionhead\par%
+     \color{pekingred}\noindent\rule{10cm}{1pt} \\
+     \LARGE{\faFileCodeO}
+   \end{beamercolorbox}
+   \vfill
+   \end{frame}
+ }
